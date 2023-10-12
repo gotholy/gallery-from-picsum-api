@@ -19,12 +19,8 @@ h2 {
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(10, 1fr);
   grid-column-gap: 10px;
-  grid-row-gap: 10px;
+  grid-row-gap: 20px;
   text-align: center;
   align-items: center;
   margin-left: 4vw;
-}
-
-img {
-  margin-top: 2vh;
 }

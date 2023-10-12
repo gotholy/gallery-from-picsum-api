@@ -9,7 +9,11 @@ fetch("https://picsum.photos/v2/list")
       // // Bild Element erstellen und Bild Pfad zuweisen
       const imageElement = document.createElement("img");
       imageElement.src = image.download_url;
+      imageElement.style.minWidth = "300px";
       imageElement.style.maxWidth = "300px";
+      imageElement.style.height = "200px";
+      imageElement.style.marginTop = "2vh";
+      imageElement.style.borderRadius = "15px";
 
       const authorElement = document.createElement("h2");
       authorElement.textContent = `${image.author}`;
@@ -18,12 +22,14 @@ fetch("https://picsum.photos/v2/list")
       const button = document.createElement("button");
       button.textContent = `Bild ${index + 1}`;
       button.style.backgroundColor = "#9d7538";
-      button.style.border = "1px solid black";
+      button.style.border = "2px solid #a4a4a4";
       button.style.borderRadius = "50px";
       button.style.height = "30px";
       button.style.width = "80px";
+      button.style.fontSize = "1.8vh";
+      button.style.fontWeight = "bold";
       button.addEventListener("click", () => {
-        window.open(image.download_url, "_blank");
+        window.open(image.url, "_blank");
       });
       // // Elemente ins div einfügen
       imageContainer.appendChild(imageElement);
@@ -33,6 +39,7 @@ fetch("https://picsum.photos/v2/list")
       imageContainer.style.height = "340px";
       imageContainer.style.width = "350px";
       imageContainer.style.border = "3px solid black";
+      imageContainer.style.borderRadius = "15px";
 
       galleryContainer.appendChild(imageContainer);
     });
