@@ -9,7 +9,7 @@ fetch("https://picsum.photos/v2/list")
       // // Bild Element erstellen und Bild Pfad zuweisen
       const imageElement = document.createElement("img");
       imageElement.src = image.download_url;
-      imageElement.style.maxWidth = "200px";
+      imageElement.style.maxWidth = "300px";
 
       const authorElement = document.createElement("h2");
       authorElement.textContent = `${image.author}`;
@@ -17,11 +17,22 @@ fetch("https://picsum.photos/v2/list")
       // // Button Element erstellen, Text im Btn festlegen, und Pfad wohin er führen soll festlegen
       const button = document.createElement("button");
       button.textContent = `Bild ${index + 1}`;
-      button.addEventListener("click", () => {});
+      button.style.backgroundColor = "#9d7538";
+      button.style.border = "1px solid black";
+      button.style.borderRadius = "50px";
+      button.style.height = "30px";
+      button.style.width = "80px";
+      button.addEventListener("click", () => {
+        window.open(image.download_url, "_blank");
+      });
       // // Elemente ins div einfügen
       imageContainer.appendChild(imageElement);
       imageContainer.appendChild(authorElement);
       imageContainer.appendChild(button);
+      imageContainer.style.backgroundColor = "#555";
+      imageContainer.style.height = "340px";
+      imageContainer.style.width = "350px";
+      imageContainer.style.border = "3px solid black";
 
       galleryContainer.appendChild(imageContainer);
     });
